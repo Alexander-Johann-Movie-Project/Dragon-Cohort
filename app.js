@@ -1,7 +1,42 @@
 // LOADING ANIMATION
-$(window).on("load", function(){
-    $(".loader").fadeOut(4000);
-});
+// $(window).on("load", function(){
+//     $(".loader").fadeOut(4000);
+// });
+
+// PAUSE MOVIE
+// Get the video
+let video = document.getElementById("myVideo");
+// Get the button
+let btn = document.getElementById("myBtn");
+// Pause and play the video, and change the button text
+function myFunction() {
+    if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+    } else {
+        video.pause();
+        btn.innerHTML = "Play";
+    }
+}
+
+let text = document.querySelectorAll('.addPopup');
+//SHOW AND HIDE INPUT FIELD
+function clickMe(e){
+
+    e.preventDefault();
+    // let text = document.getElementById("popup", "popup2", "popup3");
+    // let text = field;
+    for(let i = 0; i <= text.length; i++){
+
+        if (text[i].style.display === "none") {
+            text[i].style.display = "block";
+        } else {
+            text[i].style.display = "none";
+        }
+        // text[i].display.toggle("addpop");
+    }
+    }
+    document.getElementById("showList").addEventListener("click", clickMe)
 
 
 // API FETCH
