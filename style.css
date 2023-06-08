@@ -1,32 +1,58 @@
-/*LOADER*/
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+/*LOADING ANIMATION*/
 body {
-    background-color: #f9f9f9;
+    background: black;
     color: white;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
 }
-
-.bg {
-    /*background: url('https://i.imgur.com/hpnsdty.jpg') no-repeat center center/cover;*/
+.loader {
+    content: '';
     background-color: black;
     position: absolute;
-    /* make bg image overflow x and y boundaries to eliminate vignette effect from blur */
-    top: -30px;
-    left: -30px;
-    width: calc(100vw + 60px);
-    height: calc(100vh + 60px);
-    z-index: -1;
-    filter: blur(0px);
+    top: 0;
+    left: 0;
+    width: 100%; height: 100%;
+    /*transition-delay: 5s;*/
 }
-
-.loading-text {
-    font-size: 50px;
-    color: #fff;
+.loader .loader-wrapper {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+.loader .loader-wrapper span {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+    animation: loading 3.3s infinite ease-in-out;
+}
+.loader .loader-wrapper span:nth-of-type(1) {
+    animation-delay: 1000ms;
+}
+.loader .loader-wrapper span:nth-of-type(2) {
+    animation-delay: 800ms;
+}
+.loader .loader-wrapper span:nth-of-type(3) {
+    animation-delay: 600ms;
+}
+.loader .loader-wrapper span:nth-of-type(4) {
+    animation-delay: 400ms;
+}
+.loader .loader-wrapper span:nth-of-type(5) {
+    animation-delay: 200ms;
+}
+@keyframes loading {
+    0% {opacity: 0;
+        transform: translateX(-300px);
+    }
+    33% {opacity: 1;
+        transform: translateX(0px);
+    }
+    66% {opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {opacity: 0;
+        transform: translateX(300px);
+    }
 }
