@@ -21,9 +21,9 @@ let updateMovieWithPut = {
 
 
 // LOADING ANIMATION
-$(window).on("load", function () {
-    $(".loader").fadeOut(4000);
-});
+// $(window).on("load", function () {
+//     $(".loader").fadeOut(4000);
+// });
 
 
 // API FETCH
